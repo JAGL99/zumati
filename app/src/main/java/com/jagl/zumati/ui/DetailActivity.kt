@@ -58,7 +58,7 @@ class DetailActivity : AppCompatActivity() {
     private fun bind(student: Student){
         with(binding){
             studentName.text = "Name: ${student.name}"
-            studentAlternateNames.text = "Alternate Names: ${student.alternate_names}"
+            if(student.alternate_names.isNotEmpty()){ studentAlternateNames.text = "Alternate Name: ${student.alternate_names[0]}"}
             studentGender.text = "Gender: ${student.gender}"
             studentSpecies.text = "Species: ${student.species}"
             studentDateOfBirth.text = "Date of birth: ${student.dateOfBirth}"

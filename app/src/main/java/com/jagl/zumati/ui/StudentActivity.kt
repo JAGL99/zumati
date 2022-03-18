@@ -1,6 +1,7 @@
 package com.jagl.zumati.ui
 
 import android.os.Bundle
+import android.os.Message
 import android.util.Log
 import android.view.View
 import androidx.annotation.MainThread
@@ -14,6 +15,7 @@ import com.jagl.zumati.provider.Heroku
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.net.UnknownHostException
 import kotlin.concurrent.thread
 
 class StudentActivity : AppCompatActivity() {
@@ -40,6 +42,7 @@ class StudentActivity : AppCompatActivity() {
 
     private fun doRequestOfStudents(house: String){
         lifecycleScope.launch {
+            try {
                 val url = "$API_BASE_URL"+"$house"
                 Log.d(TAG,"Setting the url \n" +
                         "URL: $url")
@@ -51,14 +54,29 @@ class StudentActivity : AppCompatActivity() {
                     Log.d(TAG,"Notifing the adapter")
                     adapter.notifyDataSetChanged()
                 }else{
-                    AlertDialog
-                        .Builder(this@StudentActivity)
-                        .setTitle("Students not found")
-                        .setMessage("No students from this house were found")
-                        .setOnCancelListener { onBackPressed() }
-                        .show()
+                    showAlertDialog("Students not found","No students from this house were found.")
                 }
-            binding.progressBar.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
+            }catch (e: UnknownHostException){
+                Log.e(TAG,"Error\n" +
+                        "Exception: $e\n" +
+                        "Message: ${e.message}")
+                showAlertDialog("Error","A server error has occurred, please try again later or check your internet connection.")
+            } catch (e: Exception){
+                Log.e(TAG,"Error\n" +
+                        "Exception: $e\n" +
+                        "Message: ${e.message}")
+                showAlertDialog("Error","An error has occurred, please try again later.")
+            }
+
         }
+    }
+    private fun showAlertDialog(title: String, message: String){
+        AlertDialog
+            .Builder(this@StudentActivity)
+            .setTitle(title)
+            .setMessage(message)
+            .setOnCancelListener { onBackPressed() }
+            .show()
     }
 }
