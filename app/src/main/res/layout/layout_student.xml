@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/studentCard"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="4dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/background"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/student_card_background"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/studentImage"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/studentName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                tools:text="Name: Harry Potter" />
+
+            <TextView
+                android:id="@+id/studentGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:text="Gender: Male" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

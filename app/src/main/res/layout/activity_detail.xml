@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/student_card_background"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:textAlignment="center"
+    tools:context=".ui.DetailActivity">
+
+    <ImageView
+        android:id="@+id/studentImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="fitCenter"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/studentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        tools:text="Student: Harry Potter" />
+
+    <TextView
+        android:id="@+id/studentAlternateNames"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Alternate Names: El Pepe" />
+
+    <TextView
+        android:id="@+id/studentGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Gender: Male" />
+
+    <TextView
+        android:id="@+id/studentSpecies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Species: Human" />
+
+    <TextView
+        android:id="@+id/studentDateOfBirth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Date of birth: 12-02-2257" />
+
+    <TextView
+        android:id="@+id/studentAncestry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:text="Ancestry: Half-Blood" />
+
+    <TextView
+        android:id="@+id/studentEyeColour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:text="Eyes Color: green" />
+
+    <TextView
+        android:id="@+id/studentHairColour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:text="Hair Color: black" />
+
+    <TextView
+        android:id="@+id/studentPatronus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:text="Patronus: stag" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/wandField"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:padding="12dp"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wand detail"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/wandWood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                tools:text="Wood: holly" />
+
+            <TextView
+                android:id="@+id/wandCore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                tools:text="Core: phoenix feather" />
+
+            <TextView
+                android:id="@+id/wandLength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                tools:text="Length: 11" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
